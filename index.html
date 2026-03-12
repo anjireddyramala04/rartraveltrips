@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<head>
 <title>RAR Travel Trips</title>
 
 <style>
@@ -14,245 +13,85 @@ background:#f4f4f4;
 }
 
 header{
-background:#ff7a00;
+background:#0d6efd;
 color:white;
-text-align:center;
 padding:20px;
+text-align:center;
 }
 
 nav{
-background:#003366;
+background:#333;
 padding:12px;
 text-align:center;
 }
 
 nav a{
 color:white;
-margin:15px;
-font-weight:bold;
+margin:20px;
 text-decoration:none;
-}
-
-.hero{
-padding:40px;
-text-align:center;
-background:white;
+font-weight:bold;
 }
 
 .container{
-width:90%;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:20px;
-margin:20px 0;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+padding:40px;
+text-align:center;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
 }
 
 .gallery img{
-width:100%;
+width:300px;
 border-radius:10px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,td{
-padding:10px;
-border:1px solid #ddd;
-text-align:center;
-}
-
-button{
-background:#ff7a00;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:6px;
-cursor:pointer;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 
 footer{
-background:#003366;
+background:#222;
 color:white;
 text-align:center;
-padding:20px;
+padding:15px;
+margin-top:40px;
 }
 
 </style>
-
-<script>
-
-function calculateTrip(){
-
-let distance = 6500
-let mileage = document.getElementById("mileage").value
-let fuelprice = document.getElementById("fuelprice").value
-let people = document.getElementById("people").value
-
-let fuel = distance/mileage
-let fuelcost = fuel * fuelprice
-let perperson = fuelcost/people
-
-document.getElementById("result").innerHTML =
-"Total Fuel Cost: ₹"+fuelcost.toFixed(0) +
-"<br>Cost Per Person: ₹"+perperson.toFixed(0)
-
-}
-
-</script>
-
 </head>
 
 <body>
 
 <header>
-
 <h1>RAR Travel Trips</h1>
-<p>Temple Road Trips Made Easy Across India</p>
-
+<p>Explore India's Spiritual Temple Destinations</p>
 </header>
 
 <nav>
-
-<a href="#jyotirlinga">12 Jyotirlinga Trip</a>
-<a href="#map">Route Map</a>
-<a href="#gallery">Temple Gallery</a>
-<a href="#calculator">Trip Cost</a>
-<a href="#shakti">18 Shakti Peethas</a>
-
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="packages.html">Packages</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<section class="hero">
-
-<h2>12 Jyotirlinga Road Trip</h2>
-
-<p>Start City: Ongole</p>
-<p>Total Distance: ~6500 km</p>
-<p>Duration: 20–25 Days</p>
-
-</section>
-
 <div class="container">
-
-<div class="card" id="jyotirlinga">
-
-<h2>Temple Route</h2>
-
-<ol>
-
-<li>Somnath – Gujarat</li>
-<li>Nageshwar – Gujarat</li>
-<li>Bhimashankar – Maharashtra</li>
-<li>Trimbakeshwar – Maharashtra</li>
-<li>Grishneshwar – Maharashtra</li>
-<li>Omkareshwar – Madhya Pradesh</li>
-<li>Mahakaleshwar – Ujjain</li>
-<li>Kashi Vishwanath – Varanasi</li>
-<li>Baidyanath – Jharkhand</li>
-<li>Jagannath – Puri</li>
-<li>Mallikarjuna – Srisailam</li>
-<li>Ramanathaswamy – Rameswaram</li>
-
-</ol>
-
-</div>
-
-<div class="card" id="map">
-
-<h2>Google Maps Route</h2>
-
-<p>Click below to open navigation</p>
-
-<a href="https://www.google.com/maps/dir/Somnath+Temple/Dwarka/Nashik/Ujjain/Varanasi/Deoghar/Puri/Srisailam/Rameswaram" target="_blank">
-
-<button>Open Route Map</button>
-
-</a>
-
-</div>
-
-<div class="card" id="gallery">
 
 <h2>Temple Photo Gallery</h2>
 
 <div class="gallery">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Somnath_temple.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Kashi_Vishwanath.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Rameswaram_Temple.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Mahakaleshwar_Temple.jpg">
-
-</div>
-
-</div>
-
-<div class="card" id="calculator">
-
-<h2>Trip Cost Calculator</h2>
-
-<p>Enter your values</p>
-
-Mileage (km per liter)
-
-<input type="number" id="mileage" value="13">
-
-<br><br>
-
-Fuel Price (₹)
-
-<input type="number" id="fuelprice" value="105">
-
-<br><br>
-
-Number of People
-
-<input type="number" id="people" value="6">
-
-<br><br>
-
-<button onclick="calculateTrip()">Calculate</button>
-
-<p id="result"></p>
-
-</div>
-
-<div class="card" id="shakti">
-
-<h2>18 Shakti Peethas Road Trip</h2>
-
-<p>Future spiritual road trip covering the sacred Shakti temples across India.</p>
-
-<ul>
-
-<li>Kamakhya – Assam</li>
-<li>Kalighat – Kolkata</li>
-<li>Vaishno Devi – Jammu</li>
-<li>Jwalamukhi – Himachal</li>
-<li>Chamundeshwari – Mysore</li>
-<li>Kanchi Kamakshi – Tamil Nadu</li>
-
-</ul>
+<img src="https://images.unsplash.com/photo-1609142621730-db3293839541?w=400">
+<img src="https://images.unsplash.com/photo-1590766940553-634a7ed41450?w=400">
+<img src="https://images.unsplash.com/photo-1627894483216-2138af692e32?w=400">
+<img src="https://images.unsplash.com/photo-1589881133829-6c8f1d0c5b9e?w=400">
 
 </div>
 
 </div>
 
 <footer>
-
 <p>© 2026 RAR Travel Trips</p>
-
 </footer>
 
 </body>
